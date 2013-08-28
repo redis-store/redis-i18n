@@ -1,6 +1,6 @@
 # Redis stores for I18n
 
-__`redis-i18n`__ provides a Redis backend for __I18n__. See the main [redis-store readme](https://github.com/jodosha/redis-store) for general guidelines.
+__`redis-i18n`__ provides a Redis backend for __I18n__. See the main [redis-store readme](https://github.com/redis-store/redis-store) for general guidelines.
 
 ## Installation
 
@@ -9,9 +9,7 @@ __`redis-i18n`__ provides a Redis backend for __I18n__. See the main [redis-stor
 gem 'redis-i18n'
 ```
 
-### Usage
-
-If you are using redis-store with Rails, consider using the [redis-rails gem](https://github.com/jodosha/redis-store/tree/master/redis-rails) instead. For standalone usage:
+## Usage
 
 ```ruby
 I18n.backend = I18n::Backend::Redis.new
@@ -21,7 +19,7 @@ I18n.backend = I18n::Backend::Redis.new
 
 ```shell
 gem install bundler
-git clone git://github.com/jodosha/redis-i18n.git
+git clone git://github.com/redis-store/redis-i18n.git
 cd redis-i18n
 bundle install
 bundle exec rake
@@ -29,6 +27,10 @@ bundle exec rake
 
 If you are on **Snow Leopard** you have to run `env ARCHFLAGS="-arch x86_64" bundle exec rake`
 
+## Status
+
+[![Gem Version](https://badge.fury.io/rb/redis-i18n.png)](http://badge.fury.io/rb/redis-i18n) [![Build Status](https://secure.travis-ci.org/redis-store/redis-i18n.png?branch=master)](http://travis-ci.org/jodosha/redis-i18n?branch=master) [![Code Climate](https://codeclimate.com/github/jodosha/redis-store.png)](https://codeclimate.com/github/redis-store/redis-i18n)
+
 ## Copyright
 
-(c) 2009 - 2013 Luca Guidi - [http://lucaguidi.com](http://lucaguidi.com), released under the MIT license
+2009 - 2013 Luca Guidi - [http://lucaguidi.com](http://lucaguidi.com), released under the MIT license
