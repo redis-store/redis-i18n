@@ -1,5 +1,9 @@
 # Redis stores for I18n
 
+## New maintainer required
+
+**I am currently looking for a new maintainer for this gem. I am no longer doing any more work on this myself. Please contact me@ryanbigg.com if you'd like to take over this project.**
+
 __`redis-i18n`__ provides a Redis backend for __I18n__. See the main [redis-store readme](https://github.com/redis-store/redis-store) for general guidelines.
 
 ## Installation
