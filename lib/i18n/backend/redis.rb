@@ -56,32 +56,33 @@ module I18n
       end
 
       protected
-        def lookup(locale, key, scope = [], options = {})
-          key = normalize_flat_keys(locale, key, scope, options[:separator])
 
-          main_key = "#{locale}.#{key}"
-          if result = @store.get(main_key)
-            return result
-          end
+      def lookup(locale, key, scope = [], options = {})
+        key = normalize_flat_keys(locale, key, scope, options[:separator])
 
-          child_keys = @store.keys("#{main_key}.*")
-          if child_keys.empty?
-            return nil
-          end
-
-          result = { }
-          subkey_part = (main_key.size + 1)..(-1)
-          child_keys.each do |child_key|
-            subkey         = child_key[subkey_part].to_sym
-            result[subkey] = @store.get child_key
-          end
-
-          result
+        main_key = "#{locale}.#{key}"
+        if result = @store.get(main_key)
+          return result
         end
 
-        def resolve_link(locale, key)
-          key
+        child_keys = @store.keys("#{main_key}.*")
+        if child_keys.empty?
+          return nil
         end
+
+        result = { }
+        subkey_part = (main_key.size + 1)..(-1)
+        child_keys.each do |child_key|
+          subkey         = child_key[subkey_part].to_sym
+          result[subkey] = @store.get child_key
+        end
+
+        result
+      end
+
+      def resolve_link(locale, key)
+        key
+      end
     end
   end
 end
