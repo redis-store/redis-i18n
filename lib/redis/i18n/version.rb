@@ -1,5 +1,5 @@
 class Redis
   module I18n
-    VERSION = '0.6.5'
+    VERSION = '0.7.0'
   end
 end
