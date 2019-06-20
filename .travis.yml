@@ -1,15 +1,22 @@
 language: ruby
-script: 'bundle exec rake'
-before_install: 'gem update bundler'
+script: bundle exec rake
+before_install: gem update bundler
 rvm:
-  - 2.3
-  - 2.4
-  - 2.5
-  - 2.6
-  - ruby-head
-  - jruby-head
-
+- 2.3
+- 2.4
+- 2.5
+- 2.6
+- ruby-head
+- jruby-head
 matrix:
   allow_failures:
-    - rvm: jruby-head
-    - rvm: ruby-head
+  - rvm: jruby-head
+  - rvm: ruby-head
+deploy:
+  provider: rubygems
+  api_key:
+    secure: c3cVSaZewegFWwBTawreMlLUmUrybxzev02GGpAk8dqqOo1d4lWWlaSnJsgsdKYgpyme65Cs7iTu80OOSPBxnnHy3n/6kjWLMo2/OZcvMGSyv4DleraPhh4vnd8nYuFR3VFUmdnxr0YoO5avm6rEO2V/uEeQmmrZ4R3Lp4uQW/w=
+  gem: redis-i18n
+  on:
+    tags: true
+    repo: redis-store/redis-i18n
